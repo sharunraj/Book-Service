@@ -7,7 +7,7 @@ phases:
       #- $(aws ecr get-login --region ap-south-1 --no-include-email)
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 396608794420.dkr.ecr.us-east-1.amazonaws.com
       # Replace with this to your repository URI
-      - REPOSITORY_URI=396608794420.dkr.ecr.us-east-1.amazonaws.com/ust/book-service
+      - REPOSITORY_URI=396608794420.dkr.ecr.us-east-1.amazonaws.com/ust/bookservice
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
     commands:
